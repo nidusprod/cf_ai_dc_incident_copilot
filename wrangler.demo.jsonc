@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "dc-incident-copilot-local",
+  "main": "worker/index.ts",
+  "compatibility_date": "2025-04-01",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "durable_objects": { "bindings": [{ "name": "WORKSPACES", "class_name": "IncidentWorkspace" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["IncidentWorkspace"] }],
+  "vars": { "MODE": "simulation", "MAX_AI_DAILY": "100", "MAX_AI_MINUTE": "10" }
+}

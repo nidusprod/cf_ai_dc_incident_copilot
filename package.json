@@ -1,0 +1,41 @@
+{
+  "name": "cf-ai-dc-incident-copilot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "build": "vite build",
+    "build:preview": "vite build --mode preview --outDir preview-dist",
+    "dev": "npm run build && wrangler dev --config wrangler.demo.jsonc --ip 0.0.0.0 --port 8787",
+    "dev:ai": "npm run build && wrangler dev --config wrangler.jsonc --port 8787",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:api": "node tests/api.mjs",
+    "check": "npm run typecheck && npm test && npm run build",
+    "deploy:cloudflare": "npm run check && wrangler deploy --config wrangler.jsonc",
+    "dry-run": "npm run build && wrangler deploy --config wrangler.jsonc --dry-run --outdir .dry-run"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "5.90.21",
+    "lucide-react": "0.468.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261024.1",
+    "@types/react": "18.3.18",
+    "@types/react-dom": "18.3.5",
+    "@vitejs/plugin-react": "4.3.4",
+    "typescript": "5.7.3",
+    "vite": "6.4.5",
+    "vitest": "5.0.5",
+    "wrangler": "4.152.0"
+  },
+  "overrides": {
+    "undici": "7.30.1"
+  }
+}
