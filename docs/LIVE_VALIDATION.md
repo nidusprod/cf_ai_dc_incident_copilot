@@ -49,4 +49,4 @@ The accepted live call was followed by an unrelated assertion error in the stand
 
 The test plan originally included follow-up memory and facilities model calls. Those additional live scenarios were not run because the three-call limit was used diagnosing and confirming the parser fix. Memory, facilities, safety, workflow, and isolation behavior remain covered by local unit/API/browser checks, not by a claim of expanded live-model evaluation.
 
-The shared preview remains explicitly in simulation mode. Native `env.AI.run()` behavior inside a deployed Worker, production billing/plan setup, remote persistence, identity/access controls, and GitHub publication still need separate completion.
+The shared preview remains explicitly in simulation mode. Native `env.AI.run()` behavior inside a deployed Worker, production billing/plan setup, remote persistence, and identity/access controls still need separate completion. The source has since been published on [GitHub](https://github.com/nidusprod/cf_ai_dc_incident_copilot).

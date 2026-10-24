@@ -39,6 +39,7 @@ Code and local verification are complete, and the source is public on [GitHub](h
 | Check | Result |
 |---|---|
 | TypeScript strict check | Passed |
+| Public repository CI | [Initial GitHub Actions run passed](https://github.com/nidusprod/cf_ai_dc_incident_copilot/actions/runs/40059508178), including clean npm install, typecheck/unit tests/frontend build, and Worker deployment dry-run |
 | Unit tests | 37 passed across two test files |
 | Live inference adapter contract, with mocked provider binding | 13 of the 37 unit tests; model ID, messages/memory, JSON text/object variants, invalid output, provider failure, and prose guard |
 | Real Workers AI, REST transport through actual app adapter | One accepted response after a response-format fix; three live calls total including diagnosis; see LIVE_VALIDATION.md |
